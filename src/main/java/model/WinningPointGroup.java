@@ -33,6 +33,7 @@ public class WinningPointGroup {
                         winOption.addItem(new Point(x, y));
                         winOption.addItem(new Point(x+1, y+1));
                         winOption.addItem(new Point(x+2, y+2));
+                        winningPoints.add(winOption);
                     }
                 }
             }
@@ -48,6 +49,7 @@ public class WinningPointGroup {
                         winOption.addItem(new Point(x, y));
                         winOption.addItem(new Point(x+1, y+1));
                         winOption.addItem(new Point(x+2, y+2));
+                        winningPoints.add(winOption);
                     }
                 }
             }
@@ -56,22 +58,24 @@ public class WinningPointGroup {
 
     private void processOneRowWithVerticalWin(int size, int x) {
         for(int y =0; y < size ; y++) {
-            if(y+2 <= size) {
+            if(y+2 < size) {
                 WinningPoint winOption = new WinningPoint();
                 winOption.addItem(new Point(x, y));
                 winOption.addItem(new Point(x, y+1));
                 winOption.addItem(new Point(x, y+2));
+                winningPoints.add(winOption);
             }
         }
     }
 
     private void processOneRowWithHorizontalWin(int size, int y) {
         for(int x =0; x < size ; x++) {
-            if(x+2 <= size) {
+            if(x+2 < size) {
                 WinningPoint winOption = new WinningPoint();
                 winOption.addItem(new Point(x, y));
                 winOption.addItem(new Point(x+1, y));
                 winOption.addItem(new Point(x+2, y));
+                winningPoints.add(winOption);
             }
         }
     }
