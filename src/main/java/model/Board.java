@@ -8,6 +8,7 @@ public class Board {
 
     public Board(BoardSize boardSize) {
         board = new HashSet<>();
+        initBoard(boardSize.size);
     }
 
     private void initBoard(int boardSize) {
@@ -30,5 +31,9 @@ public class Board {
 
     private boolean isPointAwailable(String sign) {
         return "Empty".equals(sign);
+    }
+
+    public Set<Point2> getBoard() {
+        return board;
     }
 }
