@@ -1,6 +1,7 @@
 package model;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 public class Board {
@@ -12,8 +13,8 @@ public class Board {
     }
 
     private void initBoard(int boardSize) {
-        for(int x = 0; x < boardSize ; x++) {
-            for(int y = 0; y < boardSize ; y++) {
+        for(int x = 1; x <= boardSize ; x++) {
+            for(int y = 1; y <= boardSize ; y++) {
                 board.add(new Point(x, y, "Empty"));
             }
         }
@@ -35,5 +36,15 @@ public class Board {
 
     public Set<Point> getBoard() {
         return board;
+    }
+
+    public Point getPoint(int x, int y) {
+        Point result = null;
+        Optional<Point> selectedPoint = this.getBoard().stream().filter(point -> point.getY() == y).filter(point -> point.getX() == x).findFirst();
+
+        if(selectedPoint.isPresent())
+            result = selectedPoint.get();
+
+        return result;
     }
 }
