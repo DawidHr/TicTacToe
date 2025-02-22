@@ -9,7 +9,7 @@ public class Board {
 
     public Board(BoardSize boardSize) {
         board = new HashSet<>();
-        initBoard(boardSize.size);
+        initBoard(boardSize.getSize());
     }
 
     private void initBoard(int boardSize) {
@@ -30,7 +30,7 @@ public class Board {
         }
     }
 
-    private boolean isPointAwailable(String sign) {
+    public boolean isPointAwailable(String sign) {
         return "Empty".equals(sign);
     }
 

@@ -1,9 +1,9 @@
 package model;
 
 public class Point {
-    int x;
-    int y;
-    String sign;
+    private int x;
+    private int y;
+    private String sign;
 
     public Point(int x, int y) {
         this.x = x;

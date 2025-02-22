@@ -6,8 +6,8 @@ public class BoardPrinter {
 
         System.out.println("======================================================");
 
-        for (int i = boardSize.size; i >= 1; i--) {
-            for (int j = 1; j <= boardSize.size; j++) {
+        for (int i = boardSize.getSize(); i >= 1; i--) {
+            for (int j = 1; j <= boardSize.getSize(); j++) {
                 String pointSign = " ";
                 Point selectedPoint = board.getPoint(j, i);
                 if (selectedPoint != null) {

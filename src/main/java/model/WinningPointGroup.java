@@ -8,7 +8,7 @@ public class WinningPointGroup {
 
     public WinningPointGroup(BoardSize boardSize) {
         this.winningPoints = new HashSet<>();
-        initWinningOptions(boardSize.size);
+        initWinningOptions(boardSize.getSize());
     }
 
     private void initWinningOptions(int size) {
